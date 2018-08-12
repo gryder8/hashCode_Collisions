@@ -1,8 +1,6 @@
 package pkg;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.IOException;
+import java.io.*;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -13,7 +11,11 @@ import java.util.TreeSet;
 
 import java.nio.charset.StandardCharsets;
 
-class HashTest {
+public class Main {
+    //private static InputStream inputstream = new InputStream() {
+    //}
+    private static File text = new File ("/Users/gavin/Desktop/words.txt");
+    private static String path = text.getAbsolutePath();
     private static Map<Integer, Set> collisions(Collection values) {
         Map<Integer, Set> result = new HashMap<>();
         for (Object value : values) {
@@ -31,7 +33,7 @@ class HashTest {
     public static void main(String[] args) throws IOException {
         System.err.println("Loading lines from stdin...");
         Set lines = new HashSet<>();
-        try (BufferedReader r = new BufferedReader(new InputStreamReader(System.in, StandardCharsets.UTF_8))) {
+        try (BufferedReader r = new BufferedReader(new InputStreamReader(new FileInputStream(text),StandardCharsets.UTF_8))) {
             for (String line = r.readLine(); line != null; line = r.readLine())
                 lines.add(line);
         }
