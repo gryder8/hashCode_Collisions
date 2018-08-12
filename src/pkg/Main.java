@@ -1,5 +1,6 @@
 package pkg;
 
+
 import java.io.*;
 
 import java.util.Collection;
@@ -29,7 +30,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException {
-        System.err.println("Loading lines from stdin...");
+        System.err.println("Loading lines from given file...");
         Set lines = new HashSet<>();
         try (BufferedReader r = new BufferedReader(new InputStreamReader(new FileInputStream(text),StandardCharsets.UTF_8))) {
             for (String line = r.readLine(); line != null; line = r.readLine())
