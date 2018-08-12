@@ -12,10 +12,8 @@ import java.util.TreeSet;
 import java.nio.charset.StandardCharsets;
 
 public class Main {
-    //private static InputStream inputstream = new InputStream() {
-    //}
-    private static File text = new File ("/Users/gavin/Desktop/words.txt");
-    private static String path = text.getAbsolutePath();
+
+    private static File text = new File ("/Users/gavin/Desktop/words.txt"); //For a different file, change this path or add a new one and specify it instead of text
     private static Map<Integer, Set> collisions(Collection values) {
         Map<Integer, Set> result = new HashMap<>();
         for (Object value : values) {
